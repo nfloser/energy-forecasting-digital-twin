@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import json
-from io import TextIOBase
 from pathlib import Path
 from typing import IO, Any
 from urllib.parse import urlencode
@@ -45,7 +44,9 @@ def parse_uci_power(
         subset=["timestamp"]
     )
     minute = minute.set_index("timestamp")
-    hourly = minute.resample("h").agg(power_kw_sum=("power_kw", "sum"), samples=("power_kw", "count"))
+    hourly = minute.resample("h").agg(
+        power_kw_sum=("power_kw", "sum"), samples=("power_kw", "count")
+    )
     hourly["coverage"] = hourly["samples"] / 60.0
     hourly["consumption_kwh"] = hourly["power_kw_sum"] / 60.0
     hourly = hourly[hourly["coverage"] >= min_hourly_coverage]

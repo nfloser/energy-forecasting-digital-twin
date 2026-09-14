@@ -1,0 +1,45 @@
+:root { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #f4f7fb; background: #071019; font-synthesis: none; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; background: radial-gradient(circle at 15% 0%, #17314a 0, #071019 38%, #050a10 100%); }
+body::before { content: ""; position: fixed; inset: 0; pointer-events: none; background-image: linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px); background-size: 48px 48px; mask-image: linear-gradient(to bottom, black, transparent 70%); }
+.shell { width: min(1180px, calc(100% - 40px)); margin: 0 auto; padding: 72px 0 90px; }
+.hero { display: flex; justify-content: space-between; gap: 36px; align-items: flex-start; margin-bottom: 36px; }
+.hero h1 { margin: 8px 0 14px; max-width: 760px; font-size: clamp(2.4rem, 6vw, 5.5rem); line-height: .96; letter-spacing: -.055em; font-weight: 650; }
+.lede { max-width: 720px; margin: 0; color: #9eafbf; font-size: 1.05rem; line-height: 1.7; }
+.eyebrow { margin: 0; color: #63d6c6; font-size: .72rem; font-weight: 750; letter-spacing: .16em; }
+.status { white-space: nowrap; border: 1px solid #2a3b49; background: rgba(10,22,33,.75); border-radius: 999px; padding: 10px 14px; color: #aec0cf; font-size: .8rem; backdrop-filter: blur(16px); }
+.status span { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #63d6c6; margin-right: 7px; box-shadow: 0 0 16px #63d6c6; }
+.notice { margin-bottom: 20px; padding: 14px 16px; border: 1px solid #6a4b26; border-radius: 14px; background: rgba(89,55,20,.2); color: #f2cc98; }
+.metricGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 14px; }
+.metric, .panel { border: 1px solid rgba(168,196,218,.16); background: rgba(11,23,34,.78); box-shadow: 0 16px 60px rgba(0,0,0,.24); backdrop-filter: blur(18px); }
+.metric { min-height: 138px; padding: 20px; border-radius: 20px; display: flex; flex-direction: column; justify-content: space-between; }
+.metric span, .metric small { color: #8397a8; font-size: .76rem; }
+.metric strong { font-size: 1.65rem; letter-spacing: -.03em; font-weight: 620; }
+.panel { border-radius: 24px; padding: 24px; }
+.wide { margin-bottom: 14px; }
+.panel h2 { margin: 6px 0 20px; font-size: 1.25rem; font-weight: 580; letter-spacing: -.02em; }
+.panelHeader { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+.legend { color: #8ea1b1; font-size: .75rem; display: flex; gap: 8px; align-items: center; }
+.legend i { width: 18px; height: 2px; display: inline-block; }
+.actualLegend { background: #63d6c6; }
+.forecastLegend { background: #f3c969; }
+.chart { width: 100%; height: 250px; overflow: visible; }
+.axis { stroke: #344552; stroke-width: 1; }
+.actualLine { fill: none; stroke: #63d6c6; stroke-width: 2.1; vector-effect: non-scaling-stroke; }
+.forecastDot { fill: #f3c969; filter: drop-shadow(0 0 8px #f3c969); }
+.empty { min-height: 180px; display: grid; place-items: center; color: #7f93a3; }
+.methodNote { margin: 0; color: #718798; font-size: .75rem; line-height: 1.6; }
+.twoCol { display: grid; grid-template-columns: 1.35fr .65fr; gap: 14px; }
+.modelTable { display: grid; gap: 0; }
+.tableHead, .tableRow { display: grid; grid-template-columns: 1.5fr .7fr .7fr 1.2fr; gap: 10px; align-items: center; padding: 11px 0; border-bottom: 1px solid rgba(168,196,218,.1); font-size: .78rem; }
+.tableHead { color: #6f8496; font-size: .69rem; text-transform: uppercase; letter-spacing: .08em; }
+.tableRow span:first-child { color: #dbe5ec; }
+.positive { color: #75d9b7; }
+.negative { color: #ef9e9e; }
+.facts { margin: 0; }
+.facts div { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid rgba(168,196,218,.1); }
+.facts dt { color: #718798; font-size: .76rem; }
+.facts dd { margin: 0; color: #d8e2ea; text-align: right; font-size: .76rem; }
+.mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+@media (max-width: 850px) { .hero { flex-direction: column; } .metricGrid { grid-template-columns: repeat(2, 1fr); } .twoCol { grid-template-columns: 1fr; } }
+@media (max-width: 540px) { .shell { width: min(100% - 24px, 1180px); padding-top: 40px; } .metricGrid { grid-template-columns: 1fr; } .tableHead, .tableRow { grid-template-columns: 1.25fr .6fr .6fr 1fr; font-size: .68rem; } }

@@ -1,7 +1,5 @@
 from io import StringIO
 
-import pandas as pd
-
 from energy_twin.ingestion import parse_uci_power, parse_weather_payload
 
 
