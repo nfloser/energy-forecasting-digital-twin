@@ -106,7 +106,8 @@ def publish_training_run(
         "mode": "historical_holdout",
         "methodological_note": (
             "The demo forecast is a one-step historical holdout. The target observation is "
-            "excluded from model fitting and retained only for transparent retrospective comparison."
+            "excluded from model fitting and retained only for transparent retrospective "
+            "comparison."
         ),
         "forecast_horizon_hours": 1,
         "target_timestamp": pd.Timestamp(target["timestamp"]).isoformat(),

@@ -26,7 +26,8 @@ class ModelRegistry:
 
     def save_metadata(self, metadata: ModelMetadata) -> Path:
         path = self.root / f"{metadata.model_id}.json"
-        path.write_text(json.dumps(metadata.model_dump(), indent=2, sort_keys=True), encoding="utf-8")
+        payload = json.dumps(metadata.model_dump(), indent=2, sort_keys=True)
+        path.write_text(payload, encoding="utf-8")
         return path
 
     def get(self, model_id: str) -> ModelMetadata:

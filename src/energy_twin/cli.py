@@ -10,7 +10,12 @@ from urllib.request import urlopen
 import pandas as pd
 import uvicorn
 
-from energy_twin.ingestion import UCI_POWER_URL, fetch_historical_weather, merge_energy_weather, parse_uci_power
+from energy_twin.ingestion import (
+    UCI_POWER_URL,
+    fetch_historical_weather,
+    merge_energy_weather,
+    parse_uci_power,
+)
 from energy_twin.training import publish_training_run
 
 SCEAUX_LATITUDE = 48.778
@@ -46,7 +51,9 @@ def prepare_real_data(
             shutil.copyfileobj(response, handle)
         with zipfile.ZipFile(archive) as bundle:
             member = next(
-                name for name in bundle.namelist() if name.endswith("household_power_consumption.txt")
+                name
+                for name in bundle.namelist()
+                if name.endswith("household_power_consumption.txt")
             )
             with bundle.open(member) as raw:
                 import io

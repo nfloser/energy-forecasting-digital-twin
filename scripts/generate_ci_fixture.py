@@ -28,7 +28,10 @@ def main() -> None:
     publish_training_run(
         frame,
         args.output,
-        source_metadata={"energy": "deterministic CI fixture", "weather": "deterministic CI fixture"},
+        source_metadata={
+            "energy": "deterministic CI fixture",
+            "weather": "deterministic CI fixture",
+        },
         evaluation_test_size=24,
         evaluation_min_train_size=200,
     )
