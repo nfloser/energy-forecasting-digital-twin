@@ -1,8 +1,8 @@
 # Energy Forecasting Digital Twin
 
-A research-oriented digital twin for **short-term energy-demand forecasting** using real-world time-series data, weather observations, leakage-safe feature engineering, chronological model evaluation, and transparent naive-baseline comparison.
+Energy Forecasting Digital Twin studies **short-term energy-demand forecasts** using measured electricity consumption and historical weather. It builds features without future-data leakage, evaluates models chronologically and compares their results with naive baselines.
 
-The repository is designed as research software rather than a notebook demo: the central question is not whether a machine-learning model can be trained, but whether it **actually predicts one-hour-ahead energy demand more accurately than simple, explainable baselines**.
+The research question is whether a model can **predict energy demand one hour ahead more accurately than simple, explainable baselines**. Reproducible evaluations provide the evidence for that comparison.
 
 ## Research question
 
@@ -48,7 +48,7 @@ flowchart TD
     A --> U[React / TypeScript dashboard]
 ```
 
-High-frequency numeric observations remain tabular because vectorized time-series operations are the primary workload. RDF is **not forced into v1**; ADR-003 explains why semantic storage is deferred until cross-asset/provenance querying justifies it.
+High-frequency observations use tabular storage suited to vectorized time-series calculations. RDF storage is deferred in v1 until cross-asset or provenance queries justify it, as explained in ADR-003.
 
 ## Data sources
 

@@ -32,7 +32,7 @@ All demand-derived predictors are shifted by at least one observation before rol
 
 ### Persistence
 
-The previous observed consumption is the reference baseline. It is difficult to beat on smooth, high-frequency demand series and therefore provides an honest minimum standard.
+The previous observed consumption is the reference baseline. On smooth, high-frequency demand series this can be a strong forecast, making it a useful minimum comparison.
 
 ### Seasonal naive
 
@@ -40,7 +40,7 @@ The second baseline uses the value 24 hourly steps earlier. It represents daily 
 
 ### Ridge regression
 
-Ridge provides a transparent linear benchmark with regularization. It tests whether the engineered feature representation carries predictive signal beyond naive copying.
+Ridge regression provides an interpretable regularized linear benchmark. It tests whether the engineered features add predictive information beyond the naive baselines.
 
 ### HistGradientBoostingRegressor
 
